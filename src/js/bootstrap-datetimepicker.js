@@ -1,4 +1,4 @@
-/*! version : 4.18.5
+/*! version : 4.18.6
  =========================================================
  bootstrap-datetimejs
  https://github.com/Eonasdan/bootstrap-datetimepicker
