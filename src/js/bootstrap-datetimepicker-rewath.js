@@ -1324,14 +1324,16 @@
              */
             show = function () {
                 //disable current date if time has exceeded
-              if(!(options.minDate > moment())) {
-		        if (options.porting && moment().hour() >= 17) {
-		            options.minDate = moment().add(1, 'day').hour(8).minute(0);
-		        }
-		        else if (options.porting) {
-		            options.minDate = moment();
-			}
-		}
+                if (options.minDate.diff(moment(), 'days') < 1) {
+                    if (options.minDate <= moment()) {
+                        if (options.porting && moment().hour() >= 17) {
+                            options.minDate = moment().add(1, 'day').hour(8).minute(0);
+                        }
+                        else if (options.porting) {
+                            options.minDate = moment();
+                        }
+                    }
+                }
 
                 var currentMoment,
                     useCurrentGranularity = {
